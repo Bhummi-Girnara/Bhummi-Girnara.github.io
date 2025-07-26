@@ -4,152 +4,171 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhummi Girnara – AI & DS Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
+      font-family: 'Poppins', sans-serif;
+      background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: #f1f1f1;
+      overflow-x: hidden;
     }
 
     header {
-      background: linear-gradient(to right, #fff, #e0e0e0);
-      padding: 2rem;
       text-align: center;
+      padding: 4rem 1rem;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(5px);
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-      color: #555;
+      font-size: 1.2rem;
+      color: #bbb;
     }
 
     .container {
-      max-width: 960px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem 1rem;
     }
 
     section {
+      background: rgba(20, 20, 20, 0.7);
+      padding: 2rem;
       margin-bottom: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: scale(1.01);
     }
 
     h2 {
-      color: #1a1a1a;
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 0.3rem;
+      font-size: 1.8rem;
+      color: #00bfff;
       margin-bottom: 1rem;
+      border-bottom: 1px solid #555;
+      padding-bottom: 0.3rem;
     }
 
     ul {
-      padding-left: 1.2rem;
+      list-style: none;
+      padding-left: 1rem;
     }
 
-    .contact a {
-      display: block;
-      color: #0073e6;
+    ul li::before {
+      content: "▶";
+      color: #00bfff;
+      margin-right: 0.5rem;
+    }
+
+    a {
+      color: #00bfff;
       text-decoration: none;
+      display: inline-block;
       margin-bottom: 0.5rem;
     }
 
-    .skills, .projects, .certifications, .education {
-      background-color: #fff;
-      padding: 1rem 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+    a:hover {
+      text-decoration: underline;
     }
 
     .footer {
       text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      color: #777;
-      padding: 2rem 0;
+      color: #aaa;
+      background-color: rgba(0, 0, 0, 0.6);
     }
 
     @media (max-width: 600px) {
       header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Bhummi Girnara</h1>
-    <p>Student | Passionate | Dedicated</p>
+    <p>AI & DS Enthusiast | Builder | Public Speaker</p>
   </header>
 
   <div class="container">
 
-    <section class="contact">
+    <section>
       <h2>Contact</h2>
-      <a href="mailto:bhummigirnara@gmail.com">bhummigirnara@gmail.com</a>
-      <a href="tel:+919869832960">+91 9869832960</a>
-      <a href="https://www.linkedin.com/in/bhummi-girnara-7ba804290" target="_blank">LinkedIn Profile</a>
-      <p>Mumbai, India</p>
+      <a href="mailto:bhummigirnara@gmail.com">📧 bhummigirnara@gmail.com</a><br>
+      <a href="tel:+919869832960">📱 +91 9869832960</a><br>
+      <a href="https://www.linkedin.com/in/bhummi-girnara-7ba804290" target="_blank">🔗 LinkedIn Profile</a><br>
+      <p>📍 Mumbai, India</p>
     </section>
 
-    <section class="education">
+    <section>
       <h2>Education</h2>
       <ul>
-        <li><strong>TCET</strong> – BTech AI & DS (CGPA: 10.0)</li>
-        <li>Don Bosco Junior College – HSC (81%)</li>
-        <li>St. Xavier’s High School – SSC (97.8%)</li>
-      </ul>
-    </section>
-
-    <section class="skills">
-      <h2>Skills</h2>
-      <ul>
-        <li>Languages: Java, Python, C/C++, HTML/CSS, JavaScript</li>
-        <li>Frameworks: Flask, JavaFX, Bootstrap, TensorFlow, Scikit-learn</li>
-        <li>Tools: PostgreSQL, Git, VSCode, Google Colab, Jupyter</li>
-        <li>Soft Skills: Public Speaking, Leadership, Writing, Teamwork</li>
-      </ul>
-    </section>
-
-    <section class="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>E-commerce Shoe Store Webpage</li>
-        <li>Personal Blog & Food Website</li>
-        <li>Habit Tracker Web App</li>
-        <li>PAN Card Tampering Detection (Flask + ML)</li>
-        <li>Intel Image Classification (TensorFlow)</li>
-        <li>Customer Revenue Prediction (LogReg, Decision Tree)</li>
-        <li>Hospital Management System (PostgreSQL)</li>
-      </ul>
-    </section>
-
-    <section class="certifications">
-      <h2>Certifications</h2>
-      <ul>
-        <li>PostgreSQL Bootcamp (Beginner–Advanced)</li>
-        <li>GenAI Data Analytics – TATA</li>
-        <li>Data Analytics Simulation – Deloitte</li>
-        <li>AI & ML Bootcamp</li>
+        <li>TCET – BTech AI & DS – CGPA: 10.00</li>
+        <li>Don Bosco Junior College – HSC – 81.00%</li>
+        <li>St. Xavier’s High School – SSC – 97.80%</li>
       </ul>
     </section>
 
     <section>
-      <h2>Experience & Positions</h2>
+      <h2>Skills & Tools</h2>
+      <ul>
+        <li>Java, Python, C/C++, HTML/CSS, JS</li>
+        <li>Flask, JavaFX, Bootstrap, TensorFlow</li>
+        <li>PostgreSQL, Git, Colab, VSCode, Jupyter</li>
+        <li>Leadership, Public Speaking, Writing</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>Shoe Store E-commerce Page (HTML/CSS/JS)</li>
+        <li>Food Website, Blog Website</li>
+        <li>Habit Tracker Web App</li>
+        <li>PAN Card Tampering Detector – Python + ML</li>
+        <li>Intel Image Classifier – TensorFlow + Flask</li>
+        <li>Customer Revenue Predictor – Decision Tree</li>
+        <li>Hospital Management System – PostgreSQL</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Certifications</h2>
+      <ul>
+        <li>PostgreSQL Bootcamp – 60+ hrs</li>
+        <li>GenAI by TATA</li>
+        <li>Data Analytics Simulation – Deloitte</li>
+        <li>Complete AI & ML Bootcamp</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
       <ul>
         <li>Vice Chairperson – AXIOS E-Cell TCET</li>
         <li>Publication Head – S4DS</li>
         <li>AI/ML Engineer – Aethron.AI</li>
-        <li>Presented paper at MULTICON EWPP (2024)</li>
-        <li>Student Ambassador – Atal Tinkering Lab</li>
+        <li>Paper Presented – MULTICON EWPPC</li>
       </ul>
     </section>
 
@@ -157,17 +176,18 @@
       <h2>Achievements</h2>
       <ul>
         <li>Top 50 – NEC 2024</li>
-        <li>Winner – Bizshasn Idea Pitch (National)</li>
-        <li>HT Scholarship Winner for Writing Skills</li>
-        <li>Best Speaker – World Scholar's Cup</li>
+        <li>Winner – Bizshasn Pitching (National)</li>
+        <li>HT Writing Scholarship Winner</li>
+        <li>Top 10 – World Scholar’s Cup</li>
         <li>Chair – INMUN Committee</li>
       </ul>
     </section>
+
   </div>
 
   <div class="footer">
-    &copy; 2025 Bhummi Girnara. All Rights Reserved.
+    &copy; 2025 Bhummi Girnara | Crafted with ❤️ and Code
   </div>
+
 </body>
 </html>
-
