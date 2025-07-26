@@ -1,193 +1,225 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bhummi Girnara – AI & DS Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Poppins', sans-serif;
-      background: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
-      background-size: cover;
-      color: #f1f1f1;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #e0e0e0;
+      line-height: 1.6;
+      scroll-behavior: smooth;
       overflow-x: hidden;
+      position: relative;
     }
-
+    .floating-icons {
+      position: fixed;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      overflow: hidden;
+    }
+    .floating-icons svg {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      fill: rgba(0,195,255,0.4);
+      animation: floatIcon 20s linear infinite;
+    }
+    @keyframes floatIcon {
+  0% { transform: translate(0, 100vh) scale(1) rotate(0deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translate(calc(100vw * var(--x-move)), -10vh) scale(1.2) rotate(360deg); opacity: 0; }
+}
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
     header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 4rem 1rem;
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(5px);
+      color: #fff;
+      animation: fadeInZoom 2s ease-out forwards;
     }
-
+    @keyframes fadeInZoom {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
     header h1 {
       font-size: 3rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(20, 20, 60, 0.9);
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 1000;
+      animation: slideDown 1s ease-in-out;
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+    nav a {
+      color: #00c3ff;
+      text-decoration: none;
       font-weight: 600;
-      margin-bottom: 0.5rem;
+      transition: color 0.3s;
     }
-
-    header p {
-      font-size: 1.2rem;
-      color: #bbb;
-    }
-
-    .container {
+    nav a:hover { color: #fff; }
+    section {
+      padding: 4rem 2rem;
       max-width: 1000px;
       margin: auto;
-      padding: 2rem 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeSlide 1s ease forwards;
     }
-
-    section {
-      background: rgba(20, 20, 20, 0.7);
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-radius: 15px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    section:nth-of-type(2) { animation-delay: 0.3s; }
+    section:nth-of-type(3) { animation-delay: 0.5s; }
+    section:nth-of-type(4) { animation-delay: 0.7s; }
+    section:nth-of-type(5) { animation-delay: 0.9s; }
+    section:nth-of-type(6) { animation-delay: 1.1s; }
+    @keyframes fadeSlide {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #00c3ff;
+      display: inline-block;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(8px);
       transition: transform 0.3s ease;
     }
-
-    section:hover {
-      transform: scale(1.01);
-    }
-
-    h2 {
-      font-size: 1.8rem;
-      color: #00bfff;
-      margin-bottom: 1rem;
-      border-bottom: 1px solid #555;
-      padding-bottom: 0.3rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
+    .card:hover { transform: scale(1.02); }
+    ul { list-style: none; padding-left: 1rem; }
     ul li::before {
-      content: "▶";
-      color: #00bfff;
+      content: "\2022";
+      color: #00c3ff;
       margin-right: 0.5rem;
     }
-
-    a {
-      color: #00bfff;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 0.5rem;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     .footer {
       text-align: center;
-      padding: 2rem 1rem;
+      padding: 2rem;
+      background-color: rgba(10, 10, 30, 0.8);
       font-size: 0.9rem;
       color: #aaa;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
     }
   </style>
 </head>
 <body>
+  <div class="floating-icons">
+    <svg style="left:$1; animation-delay: $2; --x-move: -0.5 + Math.random();" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32"/></svg>
+    <svg style="left:30%; animation-delay: 4s;" viewBox="0 0 64 64"><rect width="64" height="64" rx="16"/></svg>
+    <svg style="left:50%; animation-delay: 8s;" viewBox="0 0 64 64"><polygon points="32,0 64,64 0,64"/></svg>
+    <svg style="left:70%; animation-delay: 12s;" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32"/></svg>
+    <svg style="left:90%; animation-delay: 16s;" viewBox="0 0 64 64"><rect width="64" height="64" rx="16"/></svg>
+  </div>
+
+  <nav>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#certs">Certifications</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <header>
-    <h1>Bhummi Girnara</h1>
-    <p>AI & DS Enthusiast | Builder | Public Speaker</p>
+    <h1>Hi, I'm Bhummi Girnara<br>AI & DS Enthusiast</h1>
   </header>
 
-  <div class="container">
-
-    <section>
-      <h2>Contact</h2>
-      <a href="mailto:bhummigirnara@gmail.com">📧 bhummigirnara@gmail.com</a><br>
-      <a href="tel:+919869832960">📱 +91 9869832960</a><br>
-      <a href="https://www.linkedin.com/in/bhummi-girnara-7ba804290" target="_blank">🔗 LinkedIn Profile</a><br>
-      <p>📍 Mumbai, India</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
+  <section id="education">
+    <h2>Education</h2>
+    <div class="card">
       <ul>
         <li>TCET – BTech AI & DS – CGPA: 10.00</li>
-        <li>Don Bosco Junior College – HSC – 81.00%</li>
-        <li>St. Xavier’s High School – SSC – 97.80%</li>
+        <li>Don Bosco Jr. College – HSC: 81%</li>
+        <li>St. Xavier’s High School – SSC: 97.8%</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Skills & Tools</h2>
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="card">
       <ul>
-        <li>Java, Python, C/C++, HTML/CSS, JS</li>
-        <li>Flask, JavaFX, Bootstrap, TensorFlow</li>
-        <li>PostgreSQL, Git, Colab, VSCode, Jupyter</li>
-        <li>Leadership, Public Speaking, Writing</li>
+        <li>Languages: Java, Python, JS, HTML/CSS, C++</li>
+        <li>Tools: Git, PostgreSQL, VSCode, Colab, Jupyter</li>
+        <li>Frameworks: Flask, TensorFlow, JavaFX, Bootstrap</li>
+        <li>Soft Skills: Public Speaking, Leadership, Writing</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
       <ul>
-        <li>Shoe Store E-commerce Page (HTML/CSS/JS)</li>
-        <li>Food Website, Blog Website</li>
-        <li>Habit Tracker Web App</li>
-        <li>PAN Card Tampering Detector – Python + ML</li>
-        <li>Intel Image Classifier – TensorFlow + Flask</li>
-        <li>Customer Revenue Predictor – Decision Tree</li>
+        <li>Shoe Store E-commerce Site</li>
+        <li>PAN Card Tampering Detector</li>
+        <li>Intel Scene Classifier – TensorFlow</li>
+        <li>Customer Revenue Prediction Model</li>
         <li>Hospital Management System – PostgreSQL</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Certifications</h2>
+  <section id="certs">
+    <h2>Certifications</h2>
+    <div class="card">
       <ul>
         <li>PostgreSQL Bootcamp – 60+ hrs</li>
         <li>GenAI by TATA</li>
-        <li>Data Analytics Simulation – Deloitte</li>
-        <li>Complete AI & ML Bootcamp</li>
+        <li>Deloitte Data Analytics Simulation</li>
+        <li>AI & ML Master Bootcamp</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <h2>Experience</h2>
-      <ul>
-        <li>Vice Chairperson – AXIOS E-Cell TCET</li>
-        <li>Publication Head – S4DS</li>
-        <li>AI/ML Engineer – Aethron.AI</li>
-        <li>Paper Presented – MULTICON EWPPC</li>
-      </ul>
-    </section>
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="card">
+      <p>Email: <a href="mailto:bhummigirnara@gmail.com">bhummigirnara@gmail.com</a></p>
+      <p>Phone: <a href="tel:+919869832960">+91 9869832960</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/bhummi-girnara-7ba804290" target="_blank">Profile</a></p>
+      <p>Location: Mumbai, India</p>
+    </div>
+  </section>
 
-    <section>
-      <h2>Achievements</h2>
-      <ul>
-        <li>Top 50 – NEC 2024</li>
-        <li>Winner – Bizshasn Pitching (National)</li>
-        <li>HT Writing Scholarship Winner</li>
-        <li>Top 10 – World Scholar’s Cup</li>
-        <li>Chair – INMUN Committee</li>
-      </ul>
-    </section>
-
-  </div>
-
-  <div class="footer">
-    &copy; 2025 Bhummi Girnara | Crafted with ❤️ and Code
-  </div>
-
+  <div class="footer">&copy; 2025 Bhummi Girnara • Crafted for impact</div>
+<script>
+  // Replace floating icon styles with random motion using JS
+  const icons = document.querySelectorAll('.floating-icons svg');
+  icons.forEach(icon => {
+    const startX = Math.random() * window.innerWidth;
+    const delay = Math.random() * 20;
+    const duration = 15 + Math.random() * 10;
+    icon.style.left = `${startX}px`;
+    icon.style.animation = `floatIcon ${duration}s linear infinite`;
+    icon.style.animationDelay = `${delay}s`;
+  });
+</script>
 </body>
 </html>
