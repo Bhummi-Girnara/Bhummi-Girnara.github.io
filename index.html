@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +34,10 @@
       animation: floatIcon 20s linear infinite;
     }
     @keyframes floatIcon {
-  0% { transform: translate(0, 100vh) scale(1) rotate(0deg); opacity: 0; }
+  0% { transform: translateY(100vh) scale(1); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
   50% { opacity: 1; }
   100% { transform: translate(calc(100vw * var(--x-move)), -10vh) scale(1.2) rotate(360deg); opacity: 0; }
 }
@@ -131,7 +133,7 @@
 </head>
 <body>
   <div class="floating-icons">
-    <svg style="left:$1; animation-delay: $2; --x-move: -0.5 + Math.random();" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32"/></svg>
+    <svg style="left:10%; animation-delay: 0s;" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32"/></svg>
     <svg style="left:30%; animation-delay: 4s;" viewBox="0 0 64 64"><rect width="64" height="64" rx="16"/></svg>
     <svg style="left:50%; animation-delay: 8s;" viewBox="0 0 64 64"><polygon points="32,0 64,64 0,64"/></svg>
     <svg style="left:70%; animation-delay: 12s;" viewBox="0 0 64 64"><circle cx="32" cy="32" r="32"/></svg>
@@ -209,17 +211,6 @@
   </section>
 
   <div class="footer">&copy; 2025 Bhummi Girnara • Crafted for impact</div>
-<script>
-  // Replace floating icon styles with random motion using JS
-  const icons = document.querySelectorAll('.floating-icons svg');
-  icons.forEach(icon => {
-    const startX = Math.random() * window.innerWidth;
-    const delay = Math.random() * 20;
-    const duration = 15 + Math.random() * 10;
-    icon.style.left = `${startX}px`;
-    icon.style.animation = `floatIcon ${duration}s linear infinite`;
-    icon.style.animationDelay = `${delay}s`;
-  });
-</script>
+
 </body>
 </html>
